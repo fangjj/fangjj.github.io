@@ -1,0 +1,24 @@
+<header class="navbar navbar-default" role="banner">
+  <div class='container'>
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".mh-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id='mh-navbar-brand-title' href="/">MeteorHacks</a>
+      {% if page.section %}
+        <a class="navbar-brand" id='mh-navbar-brand-sub-title' href="/{{page.section}}">| {{site.data.sections[page.section].caption}} </a>
+      {% endif %}
+    </div>
+    <nav class='collapse navbar-collapse mh-navbar-collapse clearfix' role='navigation'>
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="https://bulletproofmeteor.com/?utm_source=meteorhacks&utm_medium=link&utm_term=meteorhacks&utm_content=homepage&utm_campaign=meteorhacks">BulletProof Meteor</a></li>
+        {% for section in site.data.sections %}
+            <li><a href="/{{section[0]}}">{{section[1].caption}}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
